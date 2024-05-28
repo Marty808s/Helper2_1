@@ -1,0 +1,11 @@
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.csproj.AssemblyReference.cache
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.WinForm1.resources
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.PozvankaForm.resources
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.PripojeniForm.resources
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.Properties.Resources.resources
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.csproj.GenerateResource.cache
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.AssemblyInfoInputs.cache
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.AssemblyInfo.cs
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.csproj.CoreCompileInputs.cache
+D:\VSTeach\Helper2WinForms\Helper2WinForms\obj\Debug\net5.0-windows7.0\Helper2WinForms.sourcelink.json
