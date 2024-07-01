@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Helper2;
-
+using System.IO;
 
 
 namespace Helper2WinForms

@@ -1,9 +1,14 @@
 ﻿using HtmlAgilityPack;
+using System;
 using System.Globalization;
 using System.Net;
 using System.Security.Policy;
+using System.Net.Http;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 
@@ -13,25 +18,25 @@ namespace Helper2
     // Interface IPrevodnik - třídy, které využivají interface se zavazují k implementaci daných metod.
     public interface IPrevodnik
     {
-        public Task<bool> VyzkousejAdresu(string url);
+        Task<bool> VyzkousejAdresu(string url);
 
-        public HtmlDocument ZiskejData(string url);
+        HtmlDocument ZiskejData(string url);
 
-        public void ZiskejNazev(HtmlDocument data);
+        void ZiskejNazev(HtmlDocument data);
 
-        public void ZiskejAnotaci(HtmlDocument data);
+        void ZiskejAnotaci(HtmlDocument data);
 
-        public void ZiskejDatumMistoLektora(HtmlDocument data);
+        void ZiskejDatumMistoLektora(HtmlDocument data);
 
-        public void ZiskejPoznamku(HtmlDocument data);
+        void ZiskejPoznamku(HtmlDocument data);
 
-        public void ZiskejOdkaz(HtmlDocument data);
+        void ZiskejOdkaz(HtmlDocument data);
 
-        public void ZiskejInfoGaranta(HtmlDocument data);
+        void ZiskejInfoGaranta(HtmlDocument data);
 
-        public HtmlDocument VlozData();
+        HtmlDocument VlozData();
 
-        public HtmlDocument VytvorVystup(); //TO DO
+        HtmlDocument VytvorVystup(); //TO DO
     }
 
 

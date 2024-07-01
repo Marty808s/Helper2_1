@@ -1,4 +1,9 @@
-﻿namespace Helper2WinForms
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+
+namespace Helper2WinForms
 {
     partial class WinForm1
     {
@@ -154,7 +159,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(lb_email);
             Controls.Add(lb_version);
-            Icon = (Icon)resources.GetObject("$this.Icon");
+            //Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(450, 450);
             MinimumSize = new Size(450, 450);
             Name = "WinForm1";

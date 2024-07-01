@@ -1,4 +1,7 @@
 using System.IO;
+using System;
+using System.Windows.Forms;
+using System.Threading;
 
 namespace Helper2WinForms
 {

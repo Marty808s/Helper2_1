@@ -1,3 +1,5 @@
+using System;
+using System.Windows.Forms;
 using Helper2;
 
 namespace Helper2WinForms

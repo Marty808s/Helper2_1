@@ -18,8 +18,6 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("Helper2WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Helper2WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
 // Vygenerované třídou WriteCodeFragment nástroje MSBuild
 

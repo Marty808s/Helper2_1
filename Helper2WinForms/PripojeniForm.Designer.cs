@@ -1,4 +1,9 @@
-﻿namespace Helper2WinForms
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
+
+namespace Helper2WinForms
 {
     partial class PripojeniForm
     {
