@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Helper2WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2a527d41fe6af53e7a7a5091588642b9526ae9d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff739ffc610a20569fc31c3f5f16f63b0115f6e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Helper2WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Helper2WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
