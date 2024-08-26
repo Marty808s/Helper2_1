@@ -33,145 +33,143 @@ namespace Helper2WinForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinForm1));
-            lb_version = new Label();
-            lb_email = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            lb_title = new Label();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            lb_intro = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            bt_pozvanky = new Button();
-            bt_pripojeni = new Button();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            SuspendLayout();
+            this.lb_version = new System.Windows.Forms.Label();
+            this.lb_email = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_title = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_intro = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.bt_pozvanky = new System.Windows.Forms.Button();
+            this.bt_pripojeni = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lb_version
             // 
-            lb_version.AutoSize = true;
-            lb_version.Location = new Point(12, 387);
-            lb_version.Name = "lb_version";
-            lb_version.Size = new Size(46, 15);
-            lb_version.TabIndex = 0;
-            lb_version.Text = "2.0.0.24";
+            this.lb_version.AutoSize = true;
+            this.lb_version.Location = new System.Drawing.Point(10, 335);
+            this.lb_version.Name = "lb_version";
+            this.lb_version.Size = new System.Drawing.Size(46, 13);
+            this.lb_version.TabIndex = 0;
+            this.lb_version.Text = "2.0.1.24";
             // 
             // lb_email
             // 
-            lb_email.AutoSize = true;
-            lb_email.Location = new Point(308, 387);
-            lb_email.Name = "lb_email";
-            lb_email.Size = new Size(114, 15);
-            lb_email.TabIndex = 1;
-            lb_email.Text = "martin.vlnas@npi.cz";
+            this.lb_email.AutoSize = true;
+            this.lb_email.Location = new System.Drawing.Point(264, 335);
+            this.lb_email.Name = "lb_email";
+            this.lb_email.Size = new System.Drawing.Size(102, 13);
+            this.lb_email.TabIndex = 1;
+            this.lb_email.Text = "martin.vlnas@npi.cz";
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(lb_title, 0, 0);
-            tableLayoutPanel1.Location = new Point(12, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(410, 100);
-            tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.lb_title, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 87);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lb_title
             // 
-            lb_title.AutoSize = true;
-            lb_title.Dock = DockStyle.Fill;
-            lb_title.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lb_title.ForeColor = SystemColors.ButtonHighlight;
-            lb_title.Location = new Point(3, 0);
-            lb_title.Name = "lb_title";
-            lb_title.Size = new Size(404, 100);
-            lb_title.TabIndex = 0;
-            lb_title.Text = "Helper 2.0";
-            lb_title.TextAlign = ContentAlignment.MiddleCenter;
+            this.lb_title.AutoSize = true;
+            this.lb_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold);
+            this.lb_title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_title.Location = new System.Drawing.Point(3, 0);
+            this.lb_title.Name = "lb_title";
+            this.lb_title.Size = new System.Drawing.Size(345, 87);
+            this.lb_title.TabIndex = 0;
+            this.lb_title.Text = "Helper 2.0";
+            this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(lb_intro, 0, 0);
-            tableLayoutPanel2.Location = new Point(19, 118);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(400, 47);
-            tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.lb_intro, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 102);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(343, 41);
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // lb_intro
             // 
-            lb_intro.AutoSize = true;
-            lb_intro.Dock = DockStyle.Fill;
-            lb_intro.Location = new Point(3, 0);
-            lb_intro.Name = "lb_intro";
-            lb_intro.Size = new Size(394, 47);
-            lb_intro.TabIndex = 0;
-            lb_intro.Text = "Zvolte si funkci:";
-            lb_intro.TextAlign = ContentAlignment.MiddleCenter;
+            this.lb_intro.AutoSize = true;
+            this.lb_intro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_intro.Location = new System.Drawing.Point(3, 0);
+            this.lb_intro.Name = "lb_intro";
+            this.lb_intro.Size = new System.Drawing.Size(337, 41);
+            this.lb_intro.TabIndex = 0;
+            this.lb_intro.Text = "Zvolte si funkci:";
+            this.lb_intro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(bt_pozvanky, 0, 0);
-            tableLayoutPanel3.Controls.Add(bt_pripojeni, 1, 0);
-            tableLayoutPanel3.Location = new Point(12, 180);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(410, 50);
-            tableLayoutPanel3.TabIndex = 4;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.bt_pozvanky, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.bt_pripojeni, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 156);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(351, 43);
+            this.tableLayoutPanel3.TabIndex = 4;
             // 
             // bt_pozvanky
             // 
-            bt_pozvanky.Location = new Point(3, 3);
-            bt_pozvanky.Name = "bt_pozvanky";
-            bt_pozvanky.Size = new Size(199, 44);
-            bt_pozvanky.TabIndex = 0;
-            bt_pozvanky.Text = "Vytvoř pozvánky na VP";
-            bt_pozvanky.UseVisualStyleBackColor = true;
-            bt_pozvanky.Click += bt_pozvanky_Click_1;
+            this.bt_pozvanky.Location = new System.Drawing.Point(3, 3);
+            this.bt_pozvanky.Name = "bt_pozvanky";
+            this.bt_pozvanky.Size = new System.Drawing.Size(169, 37);
+            this.bt_pozvanky.TabIndex = 0;
+            this.bt_pozvanky.Text = "Vytvoř pozvánky na VP";
+            this.bt_pozvanky.UseVisualStyleBackColor = true;
+            this.bt_pozvanky.Click += new System.EventHandler(this.bt_pozvanky_Click);
             // 
             // bt_pripojeni
             // 
-            bt_pripojeni.Location = new Point(208, 3);
-            bt_pripojeni.Name = "bt_pripojeni";
-            bt_pripojeni.Size = new Size(199, 44);
-            bt_pripojeni.TabIndex = 1;
-            bt_pripojeni.Text = "Vytvoř pozvánku pro připojení";
-            bt_pripojeni.UseVisualStyleBackColor = true;
-            bt_pripojeni.Click += bt_pripojeni_Click_1;
+            this.bt_pripojeni.Location = new System.Drawing.Point(178, 3);
+            this.bt_pripojeni.Name = "bt_pripojeni";
+            this.bt_pripojeni.Size = new System.Drawing.Size(170, 37);
+            this.bt_pripojeni.TabIndex = 1;
+            this.bt_pripojeni.Text = "Vytvoř pozvánku pro připojení";
+            this.bt_pripojeni.UseVisualStyleBackColor = true;
+            this.bt_pripojeni.Click += new System.EventHandler(this.bt_pripojeni_Click);
             // 
             // WinForm1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(434, 411);
-            Controls.Add(tableLayoutPanel3);
-            Controls.Add(tableLayoutPanel2);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(lb_email);
-            Controls.Add(lb_version);
-            //Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(450, 450);
-            MinimumSize = new Size(450, 450);
-            Name = "WinForm1";
-            Text = "Helper2";
-            Load += Form1_Load;
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(372, 356);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lb_email);
+            this.Controls.Add(this.lb_version);
+            this.MaximumSize = new System.Drawing.Size(388, 395);
+            this.MinimumSize = new System.Drawing.Size(388, 395);
+            this.Name = "WinForm1";
+            this.Text = "Helper2";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

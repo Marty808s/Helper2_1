@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "S:\\Git_Reps\\Helper2_1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\pripojeniform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\pripojeniform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\pozvankaform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\pozvankaform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\pozvankaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\pozvankaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\pozvankaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\pozvankaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\skript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\skript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\helper2winforms.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\helper2winforms.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +50,132 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "PripojeniForm.cs [N\u00E1vrh]",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PripojeniForm.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\PripojeniForm.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PripojeniForm.cs [N\u00E1vrh]",
+              "RelativeToolTip": "Helper2WinForms\\PripojeniForm.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T13:02:30.193Z",
+              "EditorCaption": " [N\u00E1vrh]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PozvankaForm.Designer.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.Designer.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\PozvankaForm.Designer.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.Designer.cs",
+              "RelativeToolTip": "Helper2WinForms\\PozvankaForm.Designer.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAhwEsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T13:02:00.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Helper2WinForms\\Form1.Designer.cs",
               "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.Designer.cs",
               "RelativeToolTip": "Helper2WinForms\\Form1.Designer.cs",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAowJoAAAAzAAAA",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAAAIYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T06:51:07.674Z",
+              "WhenOpened": "2024-08-26T12:58:12.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\Form1.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "RelativeToolTip": "Helper2WinForms\\Form1.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:57:15.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [N\u00E1vrh]",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\Form1.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs [N\u00E1vrh]",
+              "RelativeToolTip": "Helper2WinForms\\Form1.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:57:07.669Z",
+              "EditorCaption": " [N\u00E1vrh]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PozvankaForm.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\PozvankaForm.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.cs",
+              "RelativeToolTip": "Helper2WinForms\\PozvankaForm.cs",
+              "ViewState": "AQIAAJIAAAAAAAAAAAApwJUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:53:46.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PozvankaForm.cs [N\u00E1vrh]",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\PozvankaForm.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\PozvankaForm.cs [N\u00E1vrh]",
+              "RelativeToolTip": "Helper2WinForms\\PozvankaForm.cs [N\u00E1vrh]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:53:27.316Z",
+              "EditorCaption": " [N\u00E1vrh]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Program.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\Program.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Program.cs",
+              "RelativeToolTip": "Helper2WinForms\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:50:33.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Helper2WinForms",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
+              "RelativeDocumentMoniker": "Helper2WinForms\\Helper2WinForms.csproj",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
+              "RelativeToolTip": "Helper2WinForms\\Helper2WinForms.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-26T12:03:42.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Skript.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Skript.cs",
+              "RelativeDocumentMoniker": "Helper2WinForms\\Skript.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Skript.cs",
+              "RelativeToolTip": "Helper2WinForms\\Skript.cs",
+              "ViewState": "AQIAAMgAAAAAAAAAAAAAANMAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T11:56:52.617Z",
               "EditorCaption": ""
             }
           ]

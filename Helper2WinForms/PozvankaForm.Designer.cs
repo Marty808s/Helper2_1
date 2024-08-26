@@ -33,74 +33,76 @@ namespace Helper2WinForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PozvankaForm));
-            tableLayoutPanel1 = new TableLayoutPanel();
-            btn_pridejOdkaz = new Button();
-            btn_vytvorVystup = new Button();
-            btn_otevriVystup = new Button();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_pridejOdkaz = new System.Windows.Forms.Button();
+            this.btn_vytvorVystup = new System.Windows.Forms.Button();
+            this.btn_otevriVystup = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.8091621F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.1908379F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 258F));
-            tableLayoutPanel1.Controls.Add(btn_pridejOdkaz, 0, 0);
-            tableLayoutPanel1.Controls.Add(btn_vytvorVystup, 1, 0);
-            tableLayoutPanel1.Controls.Add(btn_otevriVystup, 2, 0);
-            tableLayoutPanel1.Location = new Point(12, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(710, 51);
-            tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.80916F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.19084F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_pridejOdkaz, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_vytvorVystup, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_otevriVystup, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(609, 44);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btn_pridejOdkaz
             // 
-            btn_pridejOdkaz.Location = new Point(3, 3);
-            btn_pridejOdkaz.Name = "btn_pridejOdkaz";
-            btn_pridejOdkaz.Size = new Size(219, 45);
-            btn_pridejOdkaz.TabIndex = 0;
-            btn_pridejOdkaz.Text = "Přidej odkaz";
-            btn_pridejOdkaz.UseVisualStyleBackColor = true;
-            btn_pridejOdkaz.Click += btn_pridejOdkaz_Click;
+            this.btn_pridejOdkaz.Location = new System.Drawing.Point(3, 3);
+            this.btn_pridejOdkaz.Name = "btn_pridejOdkaz";
+            this.btn_pridejOdkaz.Size = new System.Drawing.Size(187, 38);
+            this.btn_pridejOdkaz.TabIndex = 0;
+            this.btn_pridejOdkaz.Text = "Přidej odkaz";
+            this.btn_pridejOdkaz.UseVisualStyleBackColor = true;
+            this.btn_pridejOdkaz.Click += new System.EventHandler(this.btn_pridejOdkaz_Click);
             // 
             // btn_vytvorVystup
             // 
-            btn_vytvorVystup.Location = new Point(228, 3);
-            btn_vytvorVystup.Name = "btn_vytvorVystup";
-            btn_vytvorVystup.Size = new Size(220, 45);
-            btn_vytvorVystup.TabIndex = 1;
-            btn_vytvorVystup.Text = "Vytvoř výstup";
-            btn_vytvorVystup.UseVisualStyleBackColor = true;
-            btn_vytvorVystup.Click += btn_vytvorVystup_Click;
+            this.btn_vytvorVystup.Location = new System.Drawing.Point(196, 3);
+            this.btn_vytvorVystup.Name = "btn_vytvorVystup";
+            this.btn_vytvorVystup.Size = new System.Drawing.Size(188, 38);
+            this.btn_vytvorVystup.TabIndex = 1;
+            this.btn_vytvorVystup.Text = "Vytvoř výstup";
+            this.btn_vytvorVystup.UseVisualStyleBackColor = true;
+            this.btn_vytvorVystup.Click += new System.EventHandler(this.btn_vytvorVystup_Click);
             // 
             // btn_otevriVystup
             // 
-            btn_otevriVystup.Location = new Point(454, 3);
-            btn_otevriVystup.Name = "btn_otevriVystup";
-            btn_otevriVystup.Size = new Size(253, 45);
-            btn_otevriVystup.TabIndex = 2;
-            btn_otevriVystup.Text = "Otevři výstup";
-            btn_otevriVystup.UseVisualStyleBackColor = true;
-            btn_otevriVystup.Click += btn_otevriVystup_Click;
+            this.btn_otevriVystup.Location = new System.Drawing.Point(390, 3);
+            this.btn_otevriVystup.Name = "btn_otevriVystup";
+            this.btn_otevriVystup.Size = new System.Drawing.Size(216, 38);
+            this.btn_otevriVystup.TabIndex = 2;
+            this.btn_otevriVystup.Text = "Otevři výstup";
+            this.btn_otevriVystup.UseVisualStyleBackColor = true;
+            this.btn_otevriVystup.Click += new System.EventHandler(this.btn_otevriVystup_Click);
             // 
             // PozvankaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(734, 461);
-            Controls.Add(tableLayoutPanel1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(750, 700);
-            MinimumSize = new Size(750, 500);
-            Name = "PozvankaForm";
-            Text = "Helper2 | Pozvanka";
-            tableLayoutPanel1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 444);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(645, 612);
+            this.MinimumSize = new System.Drawing.Size(645, 439);
+            this.Name = "PozvankaForm";
+            this.Text = "Helper2 | Pozvanka";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

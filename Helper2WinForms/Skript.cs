@@ -208,11 +208,11 @@ namespace Helper2
         public void ZiskejNazev(HtmlDocument data)
         {
 
-            var classNameElement = data.DocumentNode.SelectSingleNode("//div[@class='article-header']");
+            var classNameElement = data.DocumentNode.SelectSingleNode("//div[@class='article-header']/h1");
             var className = classNameElement?.InnerText.Trim();
 
-            var subnameElement = data.DocumentNode.SelectSingleNode("//div[@class='description item span-7']");
-            var subprogramName = subnameElement?.InnerText.Trim().Split('\n')[2];
+            var subnameElement = data.DocumentNode.SelectSingleNode("//div[@class='description item span-7']/h2[1]");
+            var subprogramName = subnameElement?.InnerText.Trim();
 
             string celyNazev;
             if (string.IsNullOrEmpty(subprogramName))
@@ -302,11 +302,23 @@ namespace Helper2
             Console.WriteLine(misto);
             outputData.Add(misto);
 
-            var lektorElement = data.DocumentNode.SelectSingleNode("//ul[contains(@class, 'lektori')]");
-            var lektor = lektorElement?.InnerText.Trim();
-            var lektor_reg = Regex.Replace(lektor, @"\s+", " ");
+            var lektorElements = data.DocumentNode.SelectNodes("//ul[contains(@class, 'lektori')]/li");
 
-            lektor = $"<h2> Lektoři: {lektor_reg} </h2>";
+            List<string> lektori = new List<string>();
+
+            // Přidat každého lektora do seznamu
+            if (lektorElements != null)
+            {
+                foreach (var lektorElement in lektorElements)
+                {
+                    lektori.Add(lektorElement.InnerText.Trim());
+                }
+            }
+
+            // Spojit všechny lektory do jednoho řetězce, oddělené čárkou
+            string lektor_reg = string.Join(", ", lektori);
+
+            string lektor = $"<h2> Lektoři: {lektor_reg} </h2>";
             Console.WriteLine(lektor);
             outputData.Add(lektor);
         }
@@ -323,12 +335,14 @@ namespace Helper2
             if (odkazElement != null)
             {
                 var urlAdresa = odkazElement?.GetAttributeValue("href", "");
-                outputData.Add($"<a href=\"{urlAdresa}\" class=\"blue-button\">Přihlaste se!</a>");
+                outputData.Add($"<a href=\"{urlAdresa}\">Přihlaste se!</a>");
                 outputData.Add($"<hr class=\"hr-colored\">");
             }
 
             else
             {
+                outputData.Add($"<h4>Na kurz již neexistuje přihláška!</h4>");
+                outputData.Add($"<hr class=\"hr-colored\">");
                 Console.WriteLine("NA KURZ SE NELZE PŘIHLÁSIT!");
                 //TO-DO nějak ho dropnout z vystupu, pokud ho tam nějakýinteligent hodí
             }
@@ -432,7 +446,68 @@ namespace Helper2
                 output.DocumentNode.InnerHtml = "<!DOCTYPE html><html><head></head><body></body></html>";
 
                 HtmlNode headNode = output.DocumentNode.SelectSingleNode("//head");
-                HtmlNode nactiCSS = HtmlNode.CreateNode("<link rel=\"stylesheet\" href=\"pozvanky.css\">");
+                HtmlNode nactiCSS = HtmlNode.CreateNode(@"
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        color: #333; /* tmavě šedá barva textu */
+                    }
+
+                    h1 {
+                        color: #1e90ff; /* světle modrá barva pro nadpisy */
+                        font-size: 1.7em; /* zvětšení nadpisu */
+                        text-align: center;
+                        margin: 15px 0;
+                    }
+
+                    h2 {
+                        color: #333; 
+                        font-size: 1em; 
+                        margin: 5px 0;
+                    }
+
+                    h3 {
+                        color: #1e90ff; /* světle modrá barva pro nadpisy */
+                        font-size: 1.2em; /* zvětšení nadpisu */
+                        text-align: left;
+                        margin: 15px 0;
+                    }
+
+                    h4 {
+                        color: red;
+                        font-size: 2em;
+                    }
+
+                    .custom-no-padding {
+                        margin: 15px 0;
+                        font-size: 1.0em;
+                        text-align: justify;
+                        padding-left: 0em;
+                    }
+
+                    p {
+                        margin: 10px 0;
+                        font-size: 1em;
+                        text-align: justify;
+                        padding-left: 1.5em;
+                    }
+
+                    a {
+                        color: #1e90ff; /* světle modrá barva pro odkazy */
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+
+                    .hr-colored {
+                        border: none;
+                        height: 2px;
+                        background-color: #1e90ff; /* světle modrá barva pro oddělovací čáru */
+                    }
+
+                </style>
+                ");
+
                 headNode.AppendChild(nactiCSS);
                 HtmlNode bodyNode = output.DocumentNode.SelectSingleNode("//body");
 
