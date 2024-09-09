@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj": {}
+    "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj": {}
   },
   "projects": {
-    "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj": {
+    "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
         "projectName": "Helper2WinForms",
-        "projectPath": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
-        "packagesPath": "C:\\Users\\Marty\\.nuget\\packages\\",
-        "outputPath": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\obj\\",
+        "projectPath": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Helper2WinForms.csproj",
+        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Marty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,7 +62,7 @@
               "version": "[4.3.4, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

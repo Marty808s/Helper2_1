@@ -321,6 +321,16 @@ namespace Helper2
             string lektor = $"<h2> Lektoři: {lektor_reg} </h2>";
             Console.WriteLine(lektor);
             outputData.Add(lektor);
+
+            // Cena kurzu
+            var cenaElement = data.DocumentNode.SelectSingleNode("//p[@class='action-price-sum']");
+            var cena = cenaElement?.InnerText.Trim();
+
+            cena = $"<h2> Cena kurzu: {cena} </h2>";
+            outputData.Add(cena);
+
+
+
         }
 
 
