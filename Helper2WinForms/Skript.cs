@@ -782,7 +782,67 @@ namespace Helper2
 
 
                 HtmlNode headNode = output.DocumentNode.SelectSingleNode("//head");
-                HtmlNode nactiCSS = HtmlNode.CreateNode("<link rel=\"stylesheet\" href=\"pozvanky.css\">");
+                HtmlNode nactiCSS = HtmlNode.CreateNode(@"
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        color: #333; /* tmavě šedá barva textu */
+                    }
+
+                    h1 {
+                        color: #1e90ff; /* světle modrá barva pro nadpisy */
+                        font-size: 1.7em; /* zvětšení nadpisu */
+                        text-align: center;
+                        margin: 15px 0;
+                    }
+
+                    h2 {
+                        color: #333; 
+                        font-size: 1em; 
+                        margin: 5px 0;
+                    }
+
+                    h3 {
+                        color: #1e90ff; /* světle modrá barva pro nadpisy */
+                        font-size: 1.2em; /* zvětšení nadpisu */
+                        text-align: left;
+                        margin: 15px 0;
+                    }
+
+                    h4 {
+                        color: red;
+                        font-size: 2em;
+                    }
+
+                    .custom-no-padding {
+                        margin: 15px 0;
+                        font-size: 1.0em;
+                        text-align: justify;
+                        padding-left: 0em;
+                    }
+
+                    p {
+                        margin: 10px 0;
+                        font-size: 1em;
+                        text-align: justify;
+                        padding-left: 1.5em;
+                    }
+
+                    a {
+                        color: #1e90ff; /* světle modrá barva pro odkazy */
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+
+                    .hr-colored {
+                        border: none;
+                        height: 2px;
+                        background-color: #1e90ff; /* světle modrá barva pro oddělovací čáru */
+                    }
+
+                </style>
+                ");
                 headNode.AppendChild(nactiCSS);
                 HtmlNode bodyNode = output.DocumentNode.SelectSingleNode("//body");
 
