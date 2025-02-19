@@ -50,18 +50,20 @@ namespace Helper2WinForms
             // lb_version
             // 
             this.lb_version.AutoSize = true;
-            this.lb_version.Location = new System.Drawing.Point(10, 335);
+            this.lb_version.Location = new System.Drawing.Point(13, 412);
+            this.lb_version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_version.Name = "lb_version";
-            this.lb_version.Size = new System.Drawing.Size(46, 13);
+            this.lb_version.Size = new System.Drawing.Size(51, 16);
             this.lb_version.TabIndex = 0;
-            this.lb_version.Text = "2.0.1.24";
+            this.lb_version.Text = "2.0.2.25";
             // 
             // lb_email
             // 
             this.lb_email.AutoSize = true;
-            this.lb_email.Location = new System.Drawing.Point(264, 335);
+            this.lb_email.Location = new System.Drawing.Point(352, 412);
+            this.lb_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_email.Name = "lb_email";
-            this.lb_email.Size = new System.Drawing.Size(102, 13);
+            this.lb_email.Size = new System.Drawing.Size(126, 16);
             this.lb_email.TabIndex = 1;
             this.lb_email.Text = "martin.vlnas@npi.cz";
             // 
@@ -70,11 +72,12 @@ namespace Helper2WinForms
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lb_title, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 10);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 12);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 87);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(468, 107);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lb_title
@@ -83,9 +86,10 @@ namespace Helper2WinForms
             this.lb_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_title.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold);
             this.lb_title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_title.Location = new System.Drawing.Point(3, 0);
+            this.lb_title.Location = new System.Drawing.Point(4, 0);
+            this.lb_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(345, 87);
+            this.lb_title.Size = new System.Drawing.Size(460, 107);
             this.lb_title.TabIndex = 0;
             this.lb_title.Text = "Helper 2.0";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,20 +99,22 @@ namespace Helper2WinForms
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.lb_intro, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 102);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(21, 126);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(343, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(457, 50);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // lb_intro
             // 
             this.lb_intro.AutoSize = true;
             this.lb_intro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_intro.Location = new System.Drawing.Point(3, 0);
+            this.lb_intro.Location = new System.Drawing.Point(4, 0);
+            this.lb_intro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_intro.Name = "lb_intro";
-            this.lb_intro.Size = new System.Drawing.Size(337, 41);
+            this.lb_intro.Size = new System.Drawing.Size(449, 50);
             this.lb_intro.TabIndex = 0;
             this.lb_intro.Text = "Zvolte si funkci:";
             this.lb_intro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,18 +126,20 @@ namespace Helper2WinForms
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.bt_pozvanky, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.bt_pripojeni, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(10, 156);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(13, 192);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(351, 43);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(468, 53);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // bt_pozvanky
             // 
-            this.bt_pozvanky.Location = new System.Drawing.Point(3, 3);
+            this.bt_pozvanky.Location = new System.Drawing.Point(4, 4);
+            this.bt_pozvanky.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_pozvanky.Name = "bt_pozvanky";
-            this.bt_pozvanky.Size = new System.Drawing.Size(169, 37);
+            this.bt_pozvanky.Size = new System.Drawing.Size(225, 45);
             this.bt_pozvanky.TabIndex = 0;
             this.bt_pozvanky.Text = "Vytvoř pozvánky na VP";
             this.bt_pozvanky.UseVisualStyleBackColor = true;
@@ -139,9 +147,10 @@ namespace Helper2WinForms
             // 
             // bt_pripojeni
             // 
-            this.bt_pripojeni.Location = new System.Drawing.Point(178, 3);
+            this.bt_pripojeni.Location = new System.Drawing.Point(238, 4);
+            this.bt_pripojeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_pripojeni.Name = "bt_pripojeni";
-            this.bt_pripojeni.Size = new System.Drawing.Size(170, 37);
+            this.bt_pripojeni.Size = new System.Drawing.Size(226, 45);
             this.bt_pripojeni.TabIndex = 1;
             this.bt_pripojeni.Text = "Vytvoř pozvánku pro připojení";
             this.bt_pripojeni.UseVisualStyleBackColor = true;
@@ -149,17 +158,18 @@ namespace Helper2WinForms
             // 
             // WinForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(372, 356);
+            this.ClientSize = new System.Drawing.Size(493, 428);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lb_email);
             this.Controls.Add(this.lb_version);
-            this.MaximumSize = new System.Drawing.Size(388, 395);
-            this.MinimumSize = new System.Drawing.Size(388, 395);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(511, 475);
+            this.MinimumSize = new System.Drawing.Size(511, 475);
             this.Name = "WinForm1";
             this.Text = "Helper2";
             this.tableLayoutPanel1.ResumeLayout(false);

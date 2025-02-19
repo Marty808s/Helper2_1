@@ -221,7 +221,7 @@ namespace Helper2
             }
             else
             {
-                celyNazev = $"<h1>{className} : {subprogramName}</h1>";
+                celyNazev = $"<h1>{className}: {subprogramName}</h1>";
             }
 
             celyNazev = Regex.Replace(celyNazev, @"\s+", " "); //da tu ::after pryč
@@ -659,14 +659,14 @@ namespace Helper2
 
                 celyNazev = Regex.Replace(className, @"\s+", " "); //da tu sviňu ::after dopice
 
-                string toInsert = $"<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na vzdělávací program {className}.</p class=\"custom-no-padding\">";
+                string toInsert = $"<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na vzdělávací program {className}.</p>";
 
                 outputData.Add(toInsert);
                 outputData.Add($"<h1>{celyNazev}</h1>");
             }
             else
             {
-                celyNazev = $"{className} : {subprogramName}";
+                celyNazev = $"{className}: {subprogramName.TrimEnd()}";
                 celyNazev = Regex.Replace(celyNazev, @"\s+", " "); //da tu sviňu ::after dopice
                 string toInsert = $"<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na vzdělávací program {celyNazev}.</p>";
 
