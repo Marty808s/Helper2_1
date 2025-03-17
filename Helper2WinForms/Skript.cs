@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
+using System.Web;
+using System.IO;
 
 
 namespace Helper2
@@ -141,7 +143,7 @@ namespace Helper2
             {
                 // Přidání hlavičky User-Agent - Aby mi to fakčilo
                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3");
-                
+
                 //Pokud adresa nezačína dle podmínky, tak se vrací false - handling špatného formátu
                 if (!url.StartsWith("http://") && !url.StartsWith("https://"))
                 {
@@ -182,6 +184,7 @@ namespace Helper2
         public HtmlDocument ZiskejData(string url)
         {
             HtmlWeb web = new HtmlWeb(); //nastroj pro nacitani html
+            web.OverrideEncoding = Encoding.UTF8; // Zajistí správné kódování
 
             HtmlDocument htmlDoc = VytvorHtml(); //zavolam metodu, co vraci empty html
             htmlDoc = web.Load(url); //nacte html kod z dane adresy
@@ -246,18 +249,33 @@ namespace Helper2
             if (anotaceElements != null)
             {
                 outputData.Add($"<h3>Anotace programu:</h3>");
+
                 foreach (var anotaceElement in anotaceElements)
                 {
-                    var anotace = anotaceElement?.InnerText.Trim();
-
-                    if (!string.IsNullOrEmpty(anotace))
+                    if (anotaceElement != null)
                     {
-                        outputData.Add($"<p>{anotace}</p>");
+                        string anotace = HttpUtility.HtmlDecode(anotaceElement.InnerText.Trim());
+
+                        // Nahrazení otazníků a jiných zvláštních znaků
+                        anotace = Regex.Replace(anotace, @"\?", " "); // Nahrazení "?" mezerou
+                        anotace = Regex.Replace(anotace, @"\u00A0", " "); // Nahrazení neoddělitelné mezery běžnou mezerou
+                        anotace = Regex.Replace(anotace, @"[^\w\s.,;:()]", " "); // Odstranění nežádoucích znaků
+
+                        // Debugging: Výpis pro kontrolu
+                        Console.WriteLine("Původní anotace:");
+                        Console.WriteLine(anotaceElement.InnerText);
+
+                        Console.WriteLine("Upravená anotace:");
+                        Console.WriteLine(anotace);
+
+                        if (!string.IsNullOrEmpty(anotace))
+                        {
+                            outputData.Add($"<p>{anotace}</p>");
+                        }
                     }
                 }
             }
         }
-
 
         // Metoda pro získání poznámky VP.
         // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
@@ -450,84 +468,63 @@ namespace Helper2
         {
             HtmlDocument output = this.vystup.pozvanka;
 
-
             try
             {
                 output.DocumentNode.InnerHtml = "<!DOCTYPE html><html><head></head><body></body></html>";
 
                 HtmlNode headNode = output.DocumentNode.SelectSingleNode("//head");
+
+                // Přidání UTF-8 meta tagu do hlavičky
+                HtmlNode metaCharset = HtmlNode.CreateNode("<meta charset=\"UTF-8\">");
+                headNode.AppendChild(metaCharset);
+
+                // Přidání CSS stylů do hlavičky
                 HtmlNode nactiCSS = HtmlNode.CreateNode(@"
                 <style>
                     body {
                         font-family: Arial, sans-serif;
-                        color: #333; /* tmavě šedá barva textu */
+                        color: #333;
                     }
-
                     h1 {
-                        color: #1e90ff; /* světle modrá barva pro nadpisy */
-                        font-size: 1.7em; /* zvětšení nadpisu */
+                        color: #1e90ff;
+                        font-size: 1.7em;
                         text-align: center;
                         margin: 15px 0;
                     }
-
                     h2 {
-                        color: #333; 
-                        font-size: 1em; 
-                        margin: 5px 0;
+                        color: #333;
+                        font-size: 1.2em;
+                        margin: 10px 0;
                     }
-
-                    h3 {
-                        color: #1e90ff; /* světle modrá barva pro nadpisy */
-                        font-size: 1.2em; /* zvětšení nadpisu */
-                        text-align: left;
-                        margin: 15px 0;
-                    }
-
-                    h4 {
-                        color: red;
-                        font-size: 2em;
-                    }
-
-                    .custom-no-padding {
-                        margin: 15px 0;
-                        font-size: 1.0em;
-                        text-align: justify;
-                        padding-left: 0em;
-                    }
-
                     p {
                         margin: 10px 0;
                         font-size: 1em;
                         text-align: justify;
-                        padding-left: 1.5em;
                     }
-
-                    a {
-                        color: #1e90ff; /* světle modrá barva pro odkazy */
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-
-
                     .hr-colored {
                         border: none;
                         height: 2px;
-                        background-color: #1e90ff; /* světle modrá barva pro oddělovací čáru */
+                        background-color: #1e90ff;
                     }
-
-                </style>
-                ");
-
+                </style>");
                 headNode.AppendChild(nactiCSS);
+
                 HtmlNode bodyNode = output.DocumentNode.SelectSingleNode("//body");
 
+                // 🚀 HLAVNÍ OPRAVA - NEPOUŽÍVÁME WebUtility.HtmlEncode, protože chceme HTML správně vykreslit
                 foreach (string text in outputData)
                 {
-                    HtmlNode textNode = HtmlNode.CreateNode(text);
+                    HtmlNode textNode = HtmlNode.CreateNode(text); // 🚀 Přidáváme HTML obsah přímo
                     bodyNode?.AppendChild(textNode);
                 }
 
-                output.Save("output_pozvanka.html");
+                // Debugging: Výpis HTML před uložením
+                Console.WriteLine("Vygenerované HTML:");
+                Console.WriteLine(output.DocumentNode.OuterHtml);
+
+                // Uložení souboru jako UTF-8
+                File.WriteAllText("output_pozvanka.html", output.DocumentNode.OuterHtml, Encoding.UTF8);
+
                 return output;
             }
             catch (Exception ex)
@@ -535,7 +532,6 @@ namespace Helper2
                 Console.WriteLine($"Chyba: {ex.Message}");
                 return output;
             }
-
         }
 
 
@@ -556,81 +552,44 @@ namespace Helper2
         private List<string> outputData;
         public Pozvanka vystup;
 
-        // Deklarace proměné odkazTeams <- do ní přes GUI přiřadím odkaz na připojení
+        // Deklarace proměnné pro odkaz na připojení (např. Microsoft Teams)
         public string odkazTeams;
 
-        
         public PrevodnikPripojeni()
         {
-            // Inicializace outputData a Pozvanky v konstruktoru
+            // Inicializace seznamu pro výstupní HTML data
             outputData = new List<string>();
             this.vystup = new Pozvanka();
         }
 
-
-        // Metoda pro otestování dostupnosti dané URL adresy.
-        // <param name="url">Adresa, která se má otestovat.</param>
-        // <returns>True, pokud je adresa dostupná, jinak False.</returns>
         public async Task<bool> VyzkousejAdresu(string url)
         {
             using (HttpClient client = new HttpClient())
             {
-                // Přidání hlavičky User-Agent - Aby mi to fakčilo
                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3");
 
                 if (!url.StartsWith("http://") && !url.StartsWith("https://"))
+                    return false;
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    return response.IsSuccessStatusCode;
+                }
+                catch (HttpRequestException)
                 {
                     return false;
-                }
-
-                else
-                {
-                    try
-                    {
-                        HttpResponseMessage response = await client.GetAsync(url);
-                        return response.IsSuccessStatusCode;
-                    }
-                    catch (HttpRequestException)
-                    {
-                        return false;
-                    }
                 }
             }
         }
 
-
-        // Metoda pro získání dekódovaných dat z dané URL adresy.
-        // <param name="url">Adresa, ze které se mají data získat.</param>
-        // <returns>HTML dokument obsahující dekódovaná data.</returns>
-        public HtmlDocument VytvorHtml()
-        {
-            HtmlDocument htmlDoc = new HtmlDocument();
-
-            return htmlDoc;
-        } //jenom pro precteni zdrojove HTML
-
-
-        // Metoda pro získání dekódovaných dat z dané URL adresy.
-        // <param name="url">Adresa, ze které se mají data získat.</param>
-        // <returns>HTML dokument obsahující dekódovaná data.</returns>
         public HtmlDocument ZiskejData(string url)
         {
-            HtmlWeb web = new HtmlWeb(); //nastroj pro nacitani html
+            HtmlWeb web = new HtmlWeb();
+            web.OverrideEncoding = Encoding.UTF8; // Zajistí správné kódování
 
-            HtmlDocument htmlDoc = VytvorHtml(); //zavolam metodu, co vraci empty html
-            htmlDoc = web.Load(url); //nacte html kod z dane adresy
-
-            /*
-           htmlDoc.DocumentNode.DescendantsAndSelf(): htmlDoc.DocumentNode představuje kořenový uzel HTML dokumentu. DescendantsAndSelf() vrací všechny potomky tohoto uzlu, tj. všechny uzly v celém dokumentu, 
-            včetně sebe sama.
-
-            Where(n => n.NodeType == HtmlNodeType.Text): Where filtruje pouze uzly, které jsou typu textu (HtmlNodeType.Text). To znamená, že jsou to uzly obsahující samotný text, nikoli HTML značky.
-
-            textNode.InnerHtml = WebUtility.HtmlDecode(textNode.InnerHtml): Pro každý nalezený textový uzel provede dekódování HTML entit v jeho obsahu. Metoda WebUtility.HtmlDecode bere text obsažený v uzlu, 
-            dekóduje všechny HTML entity a přiřadí tento dekódovaný text zpět do InnerHtml textového uzlu.
-
-            return htmlDoc: Vrací upravený HTML dokument, který nyní obsahuje dekódované HTML entity uvnitř textových uzlů.
-            */
+            HtmlDocument htmlDoc = new HtmlDocument();
+            htmlDoc = web.Load(url);
 
             foreach (var textNode in htmlDoc.DocumentNode.DescendantsAndSelf().Where(n => n.NodeType == HtmlNodeType.Text))
             {
@@ -640,44 +599,20 @@ namespace Helper2
             return htmlDoc;
         }
 
-
-        // Metoda pro získání názvu VP.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
         public void ZiskejNazev(HtmlDocument data)
         {
-
-            var classNameElement = data.DocumentNode.SelectSingleNode("//div[@class='article-header']");
+            var classNameElement = data.DocumentNode.SelectSingleNode("//div[@class='article-header']/h1");
             var className = classNameElement?.InnerText.Trim();
 
-            var subnameElement = data.DocumentNode.SelectSingleNode("//div[@class='description item span-7']");
-            var subprogramName = subnameElement?.InnerText.Trim().Split('\n')[2];
+            var subnameElement = data.DocumentNode.SelectSingleNode("//div[@class='description item span-7']/h2[1]");
+            var subprogramName = subnameElement?.InnerText.Trim();
 
-            string celyNazev;
+            string celyNazev = string.IsNullOrEmpty(subprogramName) ? $"<h1>{className}</h1>" : $"<h1>{className}: {subprogramName}</h1>";
 
-            if (string.IsNullOrEmpty(subprogramName))
-            {
-
-                celyNazev = Regex.Replace(className, @"\s+", " "); //da tu sviňu ::after dopice
-
-                string toInsert = $"<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na vzdělávací program {className}.</p>";
-
-                outputData.Add(toInsert);
-                outputData.Add($"<h1>{celyNazev}</h1>");
-            }
-            else
-            {
-                celyNazev = $"{className}: {subprogramName.TrimEnd()}";
-                celyNazev = Regex.Replace(celyNazev, @"\s+", " "); //da tu sviňu ::after dopice
-                string toInsert = $"<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na vzdělávací program {celyNazev}.</p>";
-
-                outputData.Add(toInsert);
-                outputData.Add($"<h1>{celyNazev}</h1>");
-            }
+            celyNazev = Regex.Replace(celyNazev, @"\s+", " ");
+            outputData.Add(celyNazev);
         }
 
-
-        // Metoda pro získání anotace VP.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
         public void ZiskejAnotaci(HtmlDocument data)
         {
             var anotaceElements = data.DocumentNode.SelectNodes("//div[@class='description item span-7']/p");
@@ -688,100 +623,47 @@ namespace Helper2
 
                 foreach (var anotaceElement in anotaceElements)
                 {
-                    var anotace = anotaceElement?.InnerText.Trim();
-
-                    if (!string.IsNullOrEmpty(anotace))
+                    if (anotaceElement != null)
                     {
-                        outputData.Add($"<p>{anotace}</p>");
+                        string anotace = HttpUtility.HtmlDecode(anotaceElement.InnerText.Trim());
+
+                        anotace = Regex.Replace(anotace, @"\?", " ");
+                        anotace = Regex.Replace(anotace, @"\u00A0", " ");
+                        anotace = Regex.Replace(anotace, @"[^\w\s.,;:()]", " ");
+
+                        Console.WriteLine("Upravená anotace:");
+                        Console.WriteLine(anotace);
+
+                        if (!string.IsNullOrEmpty(anotace))
+                        {
+                            outputData.Add($"<p>{anotace}</p>");
+                        }
                     }
                 }
             }
         }
 
-
-        // Metoda pro získání poznámky VP.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
-        public void ZiskejPoznamku(HtmlDocument data)
-        {
-            var poznamkaElement = data.DocumentNode.SelectSingleNode("//div[@class='description item span-7']/i");
-            var poznamka = poznamkaElement?.InnerText.Trim();
-
-            if (!string.IsNullOrEmpty(poznamka))
-            {
-                outputData.Add($"<h3>Poznámka:</h3>");
-                outputData.Add($"<h2>{poznamka}</h2>");
-            }
-            else
-            {
-                Console.WriteLine("Není poznámka..");
-                Console.WriteLine("");
-            }
-        }
-
-
-        // Metoda pro získání informací typu: Datum, Místo, Lektor.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
-        public void ZiskejDatumMistoLektora(HtmlDocument data)
-        {
-            var datumElement = data.DocumentNode.SelectSingleNode("//p[@class='action-date']");
-            var datum = datumElement?.InnerText.Trim();
-            datum = Regex.Replace(datum, @"\s+", " ");
-
-            datum = $"<h2> Datum konání: {datum} </h2>";
-            Console.WriteLine(datum);
-
-            outputData.Add(datum);
-
-
-            var mistoElement = data.DocumentNode.SelectSingleNode("//h5[contains(text(),'Místo konání')]/following-sibling::p[1]/strong");
-            var misto = mistoElement?.InnerText.Trim();
-            misto = Regex.Replace(misto, @"\s+", " ");
-
-            misto = $"<h2> Místo konání: {misto} </h2>";
-            Console.WriteLine(misto);
-            outputData.Add(misto);
-
-            var lektorElement = data.DocumentNode.SelectSingleNode("//ul[contains(@class, 'lektori')]");
-            var lektor = lektorElement?.InnerText.Trim();
-            var lektor_reg = Regex.Replace(lektor, @"\s+", " ");
-
-            lektor = $"<h2> Lektoři: {lektor_reg} </h2>";
-            Console.WriteLine(lektor);
-            outputData.Add(lektor);
-        }
-
-
-        // Metoda pro získání odkazu na připojení - dochází ke kontrole, zda není this.odkazTeams prázdný.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
         public void ZiskejOdkaz(HtmlDocument data)
         {
-
-            string uzivatelskyOdkaz = this.odkazTeams;
-
-            if (!string.IsNullOrEmpty(uzivatelskyOdkaz))
+            if (!string.IsNullOrEmpty(odkazTeams))
             {
                 outputData.Add($"<hr class=\"hr-colored\">");
-
-                // Přidání odkazu do seznamu
                 outputData.Add($"<h3>Odkaz pro připojení:</h3>");
-                outputData.Add($"<a href=\"{uzivatelskyOdkaz}\" class=\"blue-button\">Připojte se!</a>");
+                outputData.Add($"<a href=\"{odkazTeams}\" class=\"blue-button\">Připojte se!</a>");
             }
             else
             {
+                outputData.Add($"<h3>Odkaz pro připojení není k dispozici.</h3>");
                 Console.WriteLine("Nebyl přidán odkaz..");
+            }
+
+            Console.WriteLine("Obsah outputData po ZiskejOdkaz:");
+            foreach (string text in outputData)
+            {
+                Console.WriteLine(text);
             }
         }
 
-
-        public void ZiskejInfoGaranta(HtmlDocument data)
-        {
-            outputData.Add($"<h2>Pokud máte jakýkoliv dotaz, tak neváhejte a ozvěte se!</h2>");
-        }
-
-
-        // Metoda pro převedení output listu do HTML dokumentu. V této metodě přidávám do hlavičky odkaz na CSS soubor pro následnou vyzualizaci.
-        // <param name="data">HTML vstup <- ZiskejData <- zdrojový dokument</param>
-        // <returns>HTML dokument, jedná se o výslednou pozvánku, která je uložena v adresáři programu.</returns>
         public HtmlDocument VlozData()
         {
             HtmlDocument output = this.vystup.pozvanka;
@@ -790,79 +672,43 @@ namespace Helper2
             {
                 output.DocumentNode.InnerHtml = "<!DOCTYPE html><html><head></head><body></body></html>";
 
-
                 HtmlNode headNode = output.DocumentNode.SelectSingleNode("//head");
+
+                // Přidání UTF-8 meta tagu
+                HtmlNode metaCharset = HtmlNode.CreateNode("<meta charset=\"UTF-8\">");
+                headNode.AppendChild(metaCharset);
+
+                // Přidání CSS stylů
                 HtmlNode nactiCSS = HtmlNode.CreateNode(@"
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        color: #333; /* tmavě šedá barva textu */
-                    }
-
-                    h1 {
-                        color: #1e90ff; /* světle modrá barva pro nadpisy */
-                        font-size: 1.7em; /* zvětšení nadpisu */
-                        text-align: center;
-                        margin: 15px 0;
-                    }
-
-                    h2 {
-                        color: #333; 
-                        font-size: 1em; 
-                        margin: 5px 0;
-                    }
-
-                    h3 {
-                        color: #1e90ff; /* světle modrá barva pro nadpisy */
-                        font-size: 1.2em; /* zvětšení nadpisu */
-                        text-align: left;
-                        margin: 15px 0;
-                    }
-
-                    h4 {
-                        color: red;
-                        font-size: 2em;
-                    }
-
-                    .custom-no-padding {
-                        margin: 15px 0;
-                        font-size: 1.0em;
-                        text-align: justify;
-                        padding-left: 0em;
-                    }
-
-                    p {
-                        margin: 10px 0;
-                        font-size: 1em;
-                        text-align: justify;
-                        padding-left: 1.5em;
-                    }
-
-                    a {
-                        color: #1e90ff; /* světle modrá barva pro odkazy */
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-
-
-                    .hr-colored {
-                        border: none;
-                        height: 2px;
-                        background-color: #1e90ff; /* světle modrá barva pro oddělovací čáru */
-                    }
-
-                </style>
-                ");
+            <style>
+                body { font-family: Arial, sans-serif; color: #333; }
+                h1 { color: #1e90ff; font-size: 1.7em; text-align: center; margin: 15px 0; }
+                h2 { color: #333; font-size: 1.2em; margin: 10px 0; }
+                p { margin: 10px 0; font-size: 1em; text-align: justify; }
+                .hr-colored { border: none; height: 2px; background-color: #1e90ff; }
+            </style>");
                 headNode.AppendChild(nactiCSS);
+
                 HtmlNode bodyNode = output.DocumentNode.SelectSingleNode("//body");
 
-                foreach (string text in outputData)
+                if (outputData.Count == 0)
                 {
-                    HtmlNode textNode = HtmlNode.CreateNode(text);
-                    bodyNode?.AppendChild(textNode);
+                    Console.WriteLine("❌ Chyba: outputData je prázdné!");
+                }
+                else
+                {
+                    foreach (string text in outputData)
+                    {
+                        HtmlNode textNode = HtmlNode.CreateNode(text);
+                        bodyNode?.AppendChild(textNode);
+                    }
                 }
 
-                output.Save("output_pripojeni.html");
+                Console.WriteLine("Vygenerované HTML:");
+                Console.WriteLine(output.DocumentNode.OuterHtml);
+
+                File.WriteAllText("output_pripojeni.html", output.DocumentNode.OuterHtml, Encoding.UTF8);
+
                 return output;
             }
             catch (Exception ex)
@@ -870,17 +716,20 @@ namespace Helper2
                 Console.WriteLine($"Chyba: {ex.Message}");
                 return output;
             }
-
         }
 
+        public void ZiskejDatumMistoLektora(HtmlDocument data) { }
 
-        // Jedná se o metodu, která vytváři celou výslednou pozvánku. Následně vrací HTML dokument z metody VlozData.
-        // <param name="url">Adresa vzdělávacího programu, který chceme zpracovat.</param>
-        // <returns>HTML dokument, jedná se o výslednou pozvánku, která je uložena v adresáři programu.</returns>
+        public void ZiskejPoznamku(HtmlDocument data) { }
+
+        public void ZiskejInfoGaranta(HtmlDocument data)
+        {
+            outputData.Add($"<h2>Pokud máte jakýkoliv dotaz, tak neváhejte a ozvěte se!</h2>");
+        }
+
         public HtmlDocument VytvorVystup()
         {
             return VlozData();
         }
-
     }
 }
