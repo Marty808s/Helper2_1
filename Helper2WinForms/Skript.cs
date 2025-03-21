@@ -559,6 +559,7 @@ namespace Helper2
         {
             // Inicializace seznamu pro výstupní HTML data
             outputData = new List<string>();
+            outputData.Add("<p class=\"custom-no-padding\">Dobrý den,<br><br>přihlásili jste se na následující vzdělávací program:</p class=\"custom-no-padding\">"); //vložení pozdravu na první místo
             this.vystup = new Pozvanka();
         }
 
@@ -718,7 +719,52 @@ namespace Helper2
             }
         }
 
-        public void ZiskejDatumMistoLektora(HtmlDocument data) { }
+        public void ZiskejDatumMistoLektora(HtmlDocument data) {
+            var datumElement = data.DocumentNode.SelectSingleNode("//p[@class='action-date']");
+            var datum = datumElement?.InnerText.Trim();
+            datum = Regex.Replace(datum, @"\s+", " ");
+
+            datum = $"<h2> Datum konání: {datum} </h2>";
+            Console.WriteLine(datum);
+
+            outputData.Add(datum);
+
+
+            var mistoElement = data.DocumentNode.SelectSingleNode("//h5[contains(text(),'Místo konání')]/following-sibling::p[1]/strong");
+            var misto = mistoElement?.InnerText.Trim();
+            misto = Regex.Replace(misto, @"\s+", " ");
+
+            misto = $"<h2> Místo konání: {misto} </h2>";
+            Console.WriteLine(misto);
+            outputData.Add(misto);
+
+            var lektorElements = data.DocumentNode.SelectNodes("//ul[contains(@class, 'lektori')]/li");
+
+            List<string> lektori = new List<string>();
+
+            // Přidat každého lektora do seznamu
+            if (lektorElements != null)
+            {
+                foreach (var lektorElement in lektorElements)
+                {
+                    lektori.Add(lektorElement.InnerText.Trim());
+                }
+            }
+
+            // Spojit všechny lektory do jednoho řetězce, oddělené čárkou
+            string lektor_reg = string.Join(", ", lektori);
+
+            string lektor = $"<h2> Lektoři: {lektor_reg} </h2>";
+            Console.WriteLine(lektor);
+            outputData.Add(lektor);
+
+            // Cena kurzu
+            var cenaElement = data.DocumentNode.SelectSingleNode("//p[@class='action-price-sum']");
+            var cena = cenaElement?.InnerText.Trim();
+
+            cena = $"<h2> Cena kurzu: {cena} </h2>";
+            outputData.Add(cena);
+        }
 
         public void ZiskejPoznamku(HtmlDocument data) { }
 

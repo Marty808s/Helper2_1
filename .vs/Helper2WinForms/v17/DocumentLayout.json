@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\",
+  "WorkspaceRootPath": "S:\\Git_Reps\\Helper2_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|c:\\users\\marti\\documents\\github\\helper2_1\\helper2winforms\\skript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\skript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\skript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|c:\\users\\marti\\documents\\github\\helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|S:\\Git_Reps\\Helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|c:\\users\\marti\\documents\\github\\helper2_1\\helper2winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|c:\\users\\marti\\documents\\github\\helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|s:\\git_reps\\helper2_1\\helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9749F7CE-7036-431A-BC22-BED871C5FA7F}|Helper2WinForms\\Helper2WinForms.csproj|solutionrelative:helper2winforms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,23 +32,22 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Program.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Program.cs",
               "RelativeDocumentMoniker": "Helper2WinForms\\Program.cs",
-              "ToolTip": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Program.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Program.cs",
               "RelativeToolTip": "Helper2WinForms\\Program.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T12:50:33.375Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
               "RelativeDocumentMoniker": "Helper2WinForms\\Form1.cs",
-              "ToolTip": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
               "RelativeToolTip": "Helper2WinForms\\Form1.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAEwCAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -60,23 +59,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [N\u00E1vrh]",
-              "DocumentMoniker": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Form1.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Form1.cs",
               "RelativeDocumentMoniker": "Helper2WinForms\\Form1.cs",
               "ToolTip": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Form1.cs [N\u00E1vrh]",
-              "RelativeToolTip": "Helper2WinForms\\Form1.cs [N\u00E1vrh]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T08:50:33.253Z",
-              "EditorCaption": " [N\u00E1vrh]"
+              "WhenOpened": "2025-02-19T08:50:33.253Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Skript.cs",
-              "DocumentMoniker": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Skript.cs",
+              "DocumentMoniker": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Skript.cs",
               "RelativeDocumentMoniker": "Helper2WinForms\\Skript.cs",
-              "ToolTip": "C:\\Users\\marti\\Documents\\GitHub\\Helper2_1\\Helper2WinForms\\Skript.cs",
+              "ToolTip": "S:\\Git_Reps\\Helper2_1\\Helper2WinForms\\Skript.cs",
               "RelativeToolTip": "Helper2WinForms\\Skript.cs",
-              "ViewState": "AQIAANICAAAAAAAAAAApwN0CAAAFAAAA",
+              "ViewState": "AQIAAL0BAAAAAAAAAAAnwNQBAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T11:56:52.617Z",
               "EditorCaption": ""
